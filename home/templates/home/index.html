@@ -1,5 +1,20 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Test</h1>
+
+{% for animal in animals %}
+<div>
+    <h1>{{ animal.title }} </h1>
+    <h2>{{animal.name}}</h2>
+    <p>{{animal.animal_type}}</p>
+    <p>{{animal.age}}</p>
+    <p>{{animal.color}}</p>
+    <p>{{animal.gender}}</p>
+    {{animal.description|safe}}
+    <img src="{{animal.image.url}}">
+
+</div>
+<hr>
+{% endfor %}
+
 {% endblock %}
